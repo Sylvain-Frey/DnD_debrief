@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+<div class="w3-theme-light">
+    <div id="uninvested" class="round">
+         <h1>Uninvested</h1>
+         <h3>Budget: </h3><b class="budget">-500</b><b>k</b>
+         <div id="uninvested_defence_list"
+              class="defence_list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_1" class="round">
+         <h1>Round 1</h1>
+         <h3>Budget: </h3><b class="budget">100</b><b>k</b>
+         <div class="defence_list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_2" class="round">
+         <h1>Round 2</h1>
+         <h3>Budget: </h3><b class="budget">200</b><b>k</b>
+         <div class="defence_list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_3" class="round">
+         <h1>Round 3</h1>
+         <h3>Budget: </h3><b class="budget">300</b><b>k</b>
+         <div class="defence_list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_4" class="round">
+         <h1>Round 4</h1>
+         <h3>Budget: </h3><b class="budget">400</b><b>k</b>
+         <div class="defence_list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+    </div>
+
+    <h1 class="sep">Scores:</h1>
+
+    <div class=scores>
+
+      <div class="score physical_defence">
+        <div class="score_title">Physical Protection:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+      </div>
+
+      <div class="score advanced_cyber_defence">
+        <div class="score_title">Advanced Cyber:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+      </div>
+
+      <div class="score cyber_defence">
+        <div class="score_title">Basic Cyber:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+      </div>
+
+      <div class="score data_defence">
+        <div class="score_title">Data Protection:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+      </div>
+
+      <div class="score intelligence_gathering">
+        <div class="score_title">Intelligence Gathering:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+      </div>
+
+      <div class="score human_factors">
+        <div class="score_title">Human Factors:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+      </div>
+
+    </div>
+    <script src="debrief.js"></script>
+  </div>
+  </body>
+</html>

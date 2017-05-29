@@ -1,0 +1,70 @@
+.round {
+    float: left;
+    margin: 10px;
+}
+
+.round .defence_list {
+  min-width: 250px;
+  min-height: 200px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+h3, b {
+  display: inline
+}
+
+.sep {
+  clear: both;
+}
+
+.score {
+  clear: both;
+  min-height: 20px;
+}
+
+.score_title {
+  float: left;
+  height: 10px;
+  width: 200px;
+}
+
+.score_value {
+  float: left;
+  width: 20px;
+}
+
+.score_bar {
+  float: left;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+  height: 20px;
+  width: 1px;
+}
+
+.physical_defence.defence               { color: brown; }
+.physical_defence .score_value          { color: brown; }
+.physical_defence .score_bar { background-color: brown; }
+
+.advanced_cyber_defence.defence               { color: red; }
+.advanced_cyber_defence .score_value          { color: red; }
+.advanced_cyber_defence .score_bar { background-color: red; }
+
+.cyber_defence.defence               { color: orange; }
+.cyber_defence .score_value          { color: orange; }
+.cyber_defence .score_bar { background-color: orange; }
+
+.data_defence.defence               { color: orchid; }
+.data_defence .score_value          { color: orchid; }
+.data_defence .score_bar { background-color: orchid; }
+
+.intelligence_gathering.defence               { color: blue; }
+.intelligence_gathering .score_value          { color: blue; }
+.intelligence_gathering .score_bar { background-color: blue; }
+
+.human_factors.defence               { color: green; }
+.human_factors .score_value          { color: green; }
+.human_factors .score_bar { background-color: green; }
