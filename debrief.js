@@ -17,6 +17,79 @@ let defences =
   , { name: "Encryption PC",       cost: 20, category: "data_defence" }
   ];
 
+let attacks =
+  [ { name: "Scanning Kiddie"
+    , steps: [ { name: "Scan offices", countered: false, counters: [ "Firewall office" ] }
+             , { name: "Scan offices", countered: false, counters: [ "Firewall office" ] }
+             , { name: "Scan offices", countered: false, counters: [ "Firewall office" ] }
+             , { name: "Scan offices", countered: false, counters: [ "Firewall office" ] }
+             ]
+    }
+  , { name: "DoSing Kiddie"
+    , steps: [ { name: "", countered: true, counters: [] }
+             , { name: "DoS offices", countered: false, counters: [ "Firewall office" ] }
+             , { name: "DoS offices", countered: false, counters: [ "Firewall office" ] }
+             , { name: "DoS offices", countered: false, counters: [ "Firewall office" ] }
+             ]
+    }
+  , { name: "Hacking Kiddie"
+    , steps: [ { name: "", countered: true, counters: [] }
+             , { name: "Remote control server offices", countered: false, counters: [ "Upgrade server & DB" ] }
+             , { name: "Data exfiltration server offices", countered: false, counters: [ "Monitoring office", "Encryption DB" ] }
+             , { name: "Data exfiltration server offices", countered: false, counters: [ "Monitoring office", "Encryption DB" ] }
+             ]
+    }
+  , { name: "Phishing Kiddie"
+    , steps: [ { name: "Phishing offices (trojan)", countered: false, counters: [ "Security training", "Antivirus", "Upgrade PC" ] }
+             , { name: "Disruption PC offices", countered: false, counters: [ "Antivirus", "Upgrade PC" ] }
+             , { name: "Disruption PC offices", countered: false, counters: [ "Antivirus", "Upgrade PC" ] }
+             , { name: "Disruption PC offices", countered: false, counters: [ "Antivirus", "Upgrade PC" ] }
+             ]
+    }
+  , { name: "Mafia APT PC Offices"
+    , steps: [ { name: "Infected USB offices", countered: false, counters: [ "Security training", "Antivirus" ] }
+             , { name: "Remote Control PC offices", countered: false, counters: [ "Antivirus", "Monitoring office" ] }
+             , { name: "Data exfiltration PC offices", countered: false, counters: [ "Antivirus", "Monitoring office" ] }
+             , { name: "Data exfiltration PC offices", countered: false, counters: [ "Antivirus", "Monitoring office", "Encryption PC" ] }
+             ]
+    }
+  , { name: "Mafia APT Server Offices"
+    , steps: [ { name: "Phishing offices (credentials)", countered: false, counters: [ "Security training" ] }
+             , { name: "Remote Control Server offices", countered: false, counters: [ "Monitoring office" ] }
+             , { name: "Data exfiltration DB offices", countered: false, counters: [ "Monitoring office", "Encryption DB" ] }
+             , { name: "Data exfiltration DB offices", countered: false, counters: [ "Monitoring office", "Encryption DB" ] }
+             ]
+    }
+  , { name: "Mafia APT Server Plant"
+    , steps: [ { name: "Vulnerable Wi-Fi plant", countered: false, counters: [ "Asset audit" ] }
+             , { name: "Remote Control DB plant", countered: false, counters: [ "Monitoring office", "Upgrade server & DB" ] }
+             , { name: "Data exfiltration DB plant", countered: false, counters: [ "Monitoring plant", "Encryption DB" ] }
+             , { name: "Data exfiltration DB plant", countered: false, counters: [ "Monitoring plant", "Encryption DB" ] }
+             ]
+    }
+  , { name: "Mafia Disruption Controller"
+    , steps: [ { name: "Scan plant", countered: false, counters: [ "Firewall plant" ] }
+             , { name: "Remote control Controller", countered: false, counters: [ "Upgrade controller", "Firewall plant" ] }
+             , { name: "Disruption controller", countered: false, counters: [ "Upgrade controller" ] }
+             , { name: "Disruption controller", countered: false, counters: [ "Upgrade controller" ] }
+             ]
+    }
+  , { name: "Nation State Intelligence"
+    , steps: [ { name: "Physical intrusion plant", countered: false, counters: [ "CCTV plant" ] }
+             , { name: "Remote control DB plant (0day)", countered: false, counters: [ "Monitoring plant" ] }
+             , { name: "Data exfiltration DB plant", countered: false, counters: [ "Monitoring plant" ] }
+             , { name: "Data exfiltration DB plant", countered: false, counters: [ "Monitoring plant" ] }
+             ]
+    }
+  , { name: "Nation State Disruption"
+    , steps: [ { name: "Physical intrusion plant", countered: false, counters: [] }
+             , { name: "Remote control controller (0day)", countered: false, counters: [ "CCTV plant" ] }
+             , { name: "", countered: true, counters: [] }
+             , { name: "Disruption controller", countered: false, counters: [] }
+             ]
+    }
+  ];
+
 
 // state
 let state = { 'uninvested': { budget: -500, defences: defences }
@@ -25,6 +98,7 @@ let state = { 'uninvested': { budget: -500, defences: defences }
             , 'round_3':    { budget:  300, defences: [] }
             , 'round_4':    { budget:  400, defences: [] }
             };
+
 let scores = { "physical_defence": 0
              , "advanced_cyber_defence": 0
              , "cyber_defence": 0
@@ -63,6 +137,33 @@ function drop(ev) {
     update(defence, src, dest);
 }
 
+function counter_attacks(attacks, defences) {
+  for (a in attacks) {
+    let attack = attacks[a];
+    let deployed_defences = [];
+    var already_countered = false;
+    for (s in attack.steps) {
+      let round_n = "round_"+(parseInt(s)+1);
+      let step = attack.steps[s];
+      let defences = state[round_n].defences;
+      for (d in defences) {
+        deployed_defences.push(defences[d]);
+      }
+      if (step.counters.length == 0 || already_countered) {
+        step.countered = true;
+      } else {
+        step.countered = false;
+        for (dd in deployed_defences) {
+          if (step.counters.includes(deployed_defences[dd].name)) {
+            step.countered = true;
+            already_countered = true;
+          }
+        }
+      }
+    }
+  }
+}
+
 function update(defence, src, dest) {
 
   // move defence around
@@ -86,6 +187,9 @@ function update(defence, src, dest) {
       scores[defence.category] = scores[defence.category]+5-round;
     }
   }
+
+  // update attack table
+  counter_attacks(attacks, defences);
 
   // render
   render(state);
@@ -112,7 +216,31 @@ let score_scale = { "physical_defence": 1
                   , "human_factors": 2
                   }
 
+function render_step(step, div) {
+  let title_div = div.getElementsByClassName("attack_step_title")[0];
+  let counters_div = div.getElementsByClassName("attack_step_counters")[0];
+  title_div.innerHTML = step.name;
+  while (counters_div.hasChildNodes()) {
+    counters_div.removeChild(counters_div.lastChild);
+  }
+  for (c in step.counters) {
+    let counter = step.counters[c];
+    let counter_li = document.createElement("li");
+    counter_li.innerHTML = counter;
+    counters_div.appendChild(counter_li);
+  }
+  if (step.countered) {
+    div.classList.add("countered");
+    div.classList.remove("uncountered");
+  } else {
+    div.classList.add("uncountered");
+    div.classList.remove("countered");
+  }
+}
+
 function render(state) {
+
+  // investments table
   for (round in state) {
     let div = document.getElementById(round);
 
@@ -127,11 +255,29 @@ function render(state) {
       defences.appendChild(render_defence(state[round].defences[i]));
     }
   }
+
+  // scores
   for (score in scores) {
     let div = document.getElementsByClassName("score " + score)[0];
     let score_bar = div.getElementsByClassName("score_bar")[0];
     score_bar.style.width = 20 * scores[score] * score_scale[score] + "px";
+    let score_value = div.getElementsByClassName("score_value")[0];
+    score_value.innerHTML = scores[score];
+
   }
+
+  // attacks table
+  for (a in attacks) {
+    let attack = attacks[a];
+    let attack_div = document.getElementById(attack.name);
+    let attack_steps_divs = attack_div.getElementsByClassName("attack_step");
+    for (s in attack.steps) {
+      let step = attack.steps[s];
+      let attack_step_div = attack_steps_divs[s];
+      render_step(step, attack_step_div);
+    }
+  }
+
 };
 
 render(state);

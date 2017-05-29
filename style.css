@@ -45,6 +45,8 @@ h3, b {
   width: 1px;
 }
 
+
+
 .physical_defence.defence               { color: brown; }
 .physical_defence .score_value          { color: brown; }
 .physical_defence .score_bar { background-color: brown; }
@@ -68,3 +70,41 @@ h3, b {
 .human_factors.defence               { color: green; }
 .human_factors .score_value          { color: green; }
 .human_factors .score_bar { background-color: green; }
+
+
+
+.attack {
+  clear: left;
+}
+
+.attack_title {
+  float: left;
+  width: 270px;
+  font-size: 125%;
+  font-weight: bold;
+}
+
+.attack_step_title {
+  font-weight: bold;
+  height: 10px;
+}
+
+.attack_step {
+  float: left;
+  width: 280px;
+  min-height: 85px;
+  outline: 5px solid white;
+}
+
+.attack_step_counters li {
+  font-size: 75%;
+}
+
+.attack_step.countered {
+  background-color: rgba(24, 240, 24, 0.45);
+}
+
+
+.attack_step.uncountered {
+  background-color: rgba(240, 24, 24, 0.54);
+}
