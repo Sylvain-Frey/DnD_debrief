@@ -1,4 +1,4 @@
-# Decisions & Disruption, the debrief tool
+# Decisions & Disruptions, the debrief tool
 
 Copyright Sylvain Frey, University of Southampton, CC-BY-NC.               
 
