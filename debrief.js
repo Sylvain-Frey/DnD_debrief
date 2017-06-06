@@ -6,7 +6,7 @@
 // To view a copy of this license, visit:                                     //
 //   https://creativecommons.org/licenses/by-nc/4.0/                          //
 //                                                                            //
-// Decisions & Disruptions (http:// decisions-disruptions.org) is a tabletop  //
+// Decisions & Disruptions (http://decisions-disruptions.org) is a tabletop   //
 // cyber security game, also licenced CC-BY-NC by Lancaster University.       //
 ////////////////////////////////////////////////////////////////////////////////
 
