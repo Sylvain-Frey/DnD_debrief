@@ -122,3 +122,21 @@ h3, b {
 .attack_step.uncountered {
   background-color: rgba(240, 24, 24, 0.54);
 }
+
+
+.narrative_title {
+  font-weight: bold;
+  font-size: 125%;
+  width: 270px;
+  max-width: 270px;
+  min-height: 85px;
+  float: left;
+}
+.narrative_text_ongoing {
+  float: left;
+  max-width: 1120px;
+}
+.narrative_text_countered {
+  float: left;
+  max-width: 1120px;
+}
