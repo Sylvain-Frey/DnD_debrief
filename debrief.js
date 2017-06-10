@@ -160,34 +160,34 @@ let attacks =
                , countered_by: ""
                , counters: { "Security training" : "Upon receiving an email with an attachment from an unknown source, an employee reports it directly to you. Upon close inspection, the attachment did indeed contain malware. Good thing the employee knew better than opening it themselves!"
                            , "Antivirus" : "Upon opening an attachment from an unknown sender, the antivirus fires an alert and announces that a malicious program has been stopped from running on the computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
-                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the malware."
+                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the attack."
                            }
                }
              , { name: "Disruption PC offices"
                , countered: false
-               , effect: "Employees signal that their machines have stopped functioning and display bizarre messages. The players receive a threatening email asking for a 10k ransom in exchange of a decryption key. The board of directors strictly forbids the players from paying the ransom. The lost data is never recovered, and the infected machines have to be replaced. The company's share price suffers lightly from the disruption."
+               , effect: "Employees signal that their machines have stopped functioning and display bizarre messages. You receive a threatening email asking for a 10k ransom in exchange of a decryption key. The board of directors strictly forbids you from paying the ransom. The lost data is never recovered, and the infected machines have to be replaced. The company's share price suffers lightly from the disruption."
                , countered_by: ""
                , counters: { "Security training" : "Upon receiving an email with an attachment from an unknown source, an employee reports it directly to you. Upon close inspection, the attachment did indeed contain malware. Good thing the employee knew better than opening it themselves!"
                            , "Antivirus" : "Upon opening an attachment from an unknown sender, the antivirus fires an alert and announces that a malicious program has been stopped from running on an office computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
-                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the malware."
+                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the attack."
                            }
                }
              , { name: "Disruption PC offices"
                , countered: false
-               , effect: "Employees signal that their machines have stopped functioning and display bizarre messages. The players receive a threatening email asking for a 10k ransom in exchange of a decryption key. The board of directors strictly forbids the players from paying the ransom. The lost data is never recovered, and the infected machines have to be replaced. The company's share price suffers lightly from the disruption."
+               , effect: "Employees signal that their machines have stopped functioning and display bizarre messages. You receive a threatening email asking for a 10k ransom in exchange of a decryption key. The board of directors strictly forbids you from paying the ransom. The lost data is never recovered, and the infected machines have to be replaced. The company's share price suffers lightly from the disruption."
                , countered_by: ""
                , counters: { "Security training" : "Upon receiving an email with an attachment from an unknown source, an employee reports it directly to you. Upon close inspection, the attachment did indeed contain malware. Good thing the employee knew better than opening it themselves!"
                            , "Antivirus" : "Upon opening an attachment from an unknown sender, the antivirus fires an alert and announces that a malicious program has been stopped from running on an office computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
-                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the malware."
+                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the attack."
                            }
                }
              , { name: "Disruption PC offices"
                , countered: false
-               , effect: "Employees signal that their machines have stopped functioning and display bizarre messages. The players receive a threatening email asking for a 10k ransom in exchange of a decryption key. The board of directors strictly forbids the players from paying the ransom. The lost data is never recovered, and the infected machines have to be replaced. The company's share price suffers lightly from the disruption."
+               , effect: "Employees signal that their machines have stopped functioning and display bizarre messages. You receive a threatening email asking for a 10k ransom in exchange of a decryption key. The board of directors strictly forbids you from paying the ransom. The lost data is never recovered, and the infected machines have to be replaced. The company's share price suffers lightly from the disruption."
                , countered_by: ""
                , counters: { "Security training" : "Upon receiving an email with an attachment from an unknown source, an employee reports it directly to you. Upon close inspection, the attachment did indeed contain malware. Good thing the employee knew better than opening it themselves!"
                            , "Antivirus" : "Upon opening an attachment from an unknown sender, the antivirus fires an alert and announces that a malicious program has been stopped from running on an office computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
-                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the malware."
+                           , "Upgrade PC" : "No visible effect: the upgrade makes PCs immune to the attack."
                            }
                }
              ]
@@ -197,7 +197,7 @@ let attacks =
                , countered: false
                , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Security training" : "Upon finding a thumb drive in the office's parking lot, an employee reports it directly to you (the players). Upon close inspection, the thumb drive did indeed contain malware. Good thing the employee knew better than opening it themselves!"
+               , counters: { "Security training" : "Upon finding a thumb drive in the office's parking lot, an employee reports it directly to you. Upon close inspection, the thumb drive did indeed contain malware. Good thing the employee knew better than opening it themselves!"
                            , "Antivirus" : "Upon plugging in a thumb drive found in the office's parking lot, the antivirus fires an alert and announces that a malicious program has been stopped from running on an office computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
                            }
                }
@@ -211,7 +211,7 @@ let attacks =
                }
              , { name: "Data exfiltration PC offices"
                , countered: false
-               , effect: ""
+               , effect: "A data dump is advertised for sale on the Dark Web, that contains sensitive emails and technical data from the company. The press learns about the data leak, and the company's share price plummets."
                , countered_by: ""
                , counters: { "Antivirus" : "One day, seemingly out of nowhere, the antivirus fires an alert and announces that a malicious program has been stopped from running on an office computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
                            , "Monitoring office" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from a PC and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected target is removed."
@@ -220,7 +220,7 @@ let attacks =
                }
              , { name: "Data exfiltration PC offices"
                , countered: false
-               , effect: ""
+               , effect: "A new data dump is leaked with ever more sensitive content, as well as non-important yet embarrassing personal email. You are forced to shut down the entire infrastructure for sanitisation. The company's share price crashes."
                , countered_by: ""
                , counters: { "Antivirus" : "One day, seemingly out of nowhere, the antivirus fires an alert and announces that a malicious program has been stopped from running on an office computer. Upon closer inspection, it was indeed a common piece of malware the antivirus stopped just in time: disaster averted!"
                            , "Monitoring office" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from a PC and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected target is removed."
@@ -234,28 +234,28 @@ let attacks =
                , countered: false
                , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Security training" : "" }
+               , counters: { "Security training" : "Upon receiving an email with an attachment from an unknown source, your server administrator reports it directly to you. Upon close inspection, the attachment did indeed contain malware. Good thing they knew better than opening it themselves!" }
                }
              , { name: "Remote Control Server offices"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Monitoring office" : "" }
+               , counters: { "Monitoring office" : "One day, the office's network administrator comes to talk to you: they have detected suspicious activity on the office network. The server seems to be communicating at regular intervals with an unknown machine on the Internet, located in a foreign country. Upon closer investigation, the server was compromised and remotely operated: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected target is removed." }
                }
              , { name: "Data exfiltration DB offices"
                , countered: false
-               , effect: ""
+               , effect: "A data dump is put on sale on the Dark Web containing sensitive data from the company: email, HR records, client contracts, and banking details. The press learns about the data leak and the company's share price plummets"
                , countered_by: ""
-               , counters: { "Monitoring office" : ""
-                           , "Encryption DB" : ""
+               , counters: { "Monitoring office" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from the office database and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected target is removed."
+                           , "Encryption DB" : "No visible effect: the data stolen by the attackers is unreadable and cannot be exploited."
                            }
                }
              , { name: "Data exfiltration DB offices"
                , countered: false
-               , effect: ""
+               , effect: "A cryptolocker locks down the content of the office database. As all activity has to be stopped in the office, since no one can work without access to the database, you receive a chilling email asking for a 500k ransom. The board of directors refuses to pay any ransom, and the company, having lost one of its core assets, is forced to shut down."
                , countered_by: ""
-               , counters: { "Monitoring office" : ""
-                           , "Encryption DB" : ""
+               , counters: { "Monitoring office" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from the office database and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected target is removed."
+                           , "Encryption DB" : "No visible effect: the data stolen by the attackers is unreadable and cannot be exploited."
                            }
                }
              ]
@@ -263,32 +263,32 @@ let attacks =
   , { name: "Mafia APT Server Plant"
     , steps: [ { name: "Vulnerable Wi-Fi plant"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Asset audit" : "" }
+               , counters: { "Asset audit" : "During the asset audit, an unsecured, undocumented Wi-Fi network was found in the plant. After some investigation, this was set up years ago by an engineer, who is now retired. They needed to install a set of additional debit sensors on the water stream, and an open Wi-Fi network was a cheap and simple solution compared to deploying a complicated set of cables. The Wi-Fi network was never documented and eventually forgotten. It has now been secured with a strong password." }
                }
              , { name: "Remote Control DB plant"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Monitoring office" : ""
-                           , "Upgrade server & DB" : ""
+               , counters: { "Monitoring plant" : "One day, the office's network administrator comes to talk to you: they have detected suspicious activity on the plant network. The historian database seems to be communicating at regular intervals with an unknown machine on the Internet, located in a foreign country. Upon closer investigation, the historian was compromised and remotely operated: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the historian is removed."
+                           , "Upgrade server & DB" : "No visible effect: the upgrade makes the database immune to the attack."
                            }
                }
              , { name: "Data exfiltration DB plant"
                , countered: false
-               , effect: ""
+               , effect: "One of your competitors alerts you that someone is trying to sell sensitive data apparently stolen from your plant database. Shortly after, the story leaks to the press. The company's share price plummets."
                , countered_by: ""
-               , counters: { "Monitoring plant" : ""
-                           , "Encryption DB" : ""
+               , counters: { "Monitoring plant" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from the historian database and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected historian is removed."
+                           , "Encryption DB" : "No visible effect: the data stolen by the attackers is unreadable and cannot be exploited."
                            }
                }
              , { name: "Data exfiltration DB plant"
                , countered: false
-               , effect: ""
+               , effect: "One day, the plant database crashes, and recovery attempts reveal that the entire contents have been corrupted. All activities slow down significantly for a few days, as the company's share price takes another dive."
                , countered_by: ""
-               , counters: { "Monitoring plant" : ""
-                           , "Encryption DB" : ""
+               , counters: { "Monitoring plant" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from the historian database and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected historian is removed."
+                           , "Encryption DB" : "No visible effect: the data stolen by the attackers is unreadable and cannot be exploited."
                            }
                }
              ]
@@ -296,81 +296,81 @@ let attacks =
   , { name: "Mafia Disruption Controller"
     , steps: [ { name: "Scan plant"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Firewall plant" : "" }
+               , counters: { "Firewall plant" : "The firewall intercepts a number of scanning attempts from all over the world. Apparently, there are people out there very interested in knowing more about your plant." }
                }
              , { name: "Remote control Controller"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Upgrade controller" : ""
-                           , "Firewall plant" : ""
+               , counters: { "Upgrade controller" : "No visible effect: the upgrade makes the controller immune to the attack."
+                           , "Firewall plant" : "Upon looking at detailed firewall logs, your plant network administrator discovers that an overseas machine tried to query the remote administration port of your SCADA controller. Fortunately, the firewall's rules denied access to the attacker."
                            }
                }
              , { name: "Disruption controller"
                , countered: false
-               , effect: ""
+               , effect: "One day, the turbines suffer from a partial failure, and the damage requires several days of maintenance. Shortly after, you receive a message claiming responsibility for hacking the turbine's controller, and asking for a 500k ransom. The board of directors forbids you from paying anything. The company's share price plummets."
                , countered_by: ""
-               , counters: { "Upgrade controller" : "" }
+               , counters: { "Upgrade controller" : "No visible effect: the upgrade makes the controller immune to the attack." }
                }
              , { name: "Disruption controller"
                , countered: false
-               , effect: ""
+               , effect: "One day, the turbines start accelerating out of control and finally blow up. Several employees are injured. The company, having lost one of its core assets, is forced to shut down."
                , countered_by: ""
-               , counters: { "Upgrade controller" : "" }
+               , counters: { "Upgrade controller" : "No visible effect: the upgrade makes the controller immune to the attack." }
                }
              ]
     }
   , { name: "Nation State Intelligence"
     , steps: [ { name: "Physical intrusion plant"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "CCTV plant" : "" }
+               , counters: { "CCTV plant" : "An intruder is detected entering the plant perimeter and trying to access the buildings. The moment the security guard comes and asks them what they are doing, they run away." }
                }
              , { name: "Remote control DB plant (0day)"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Monitoring plant" : "" }
+               , counters: { "Monitoring plant" : "One day, the office's network administrator comes to talk to you: they have detected suspicious activity on the plant network. The historian database seems to be communicating at regular intervals with an unknown machine on the Internet, located in a foreign country. Upon closer investigation, the historian was compromised and remotely operated: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the historian is removed." }
                }
              , { name: "Data exfiltration DB plant"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "Monitoring plant" : "" }
+               , counters: { "Monitoring plant" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from the historian database and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected historian is removed." }
                }
              , { name: "Data exfiltration DB plant"
                , countered: false
-               , effect: ""
+               , effect: "Optional description: You get a visit from the secret services, telling you that sensitive data related to the company was stolen by a foreign country. The data comes apparently from your plant database, which was compromised for months after a very sophisticated infiltration by foreign agents. Luckily, the public does not learn about it."
                , countered_by: ""
-               , counters: { "Monitoring plant" : "" }
+               , counters: { "Monitoring plant" : "One day, the office's network administrator comes to talk to you: they have detected a suspicious data stream originating from the historian database and going to an unknown address on the Internet, located in a foreign country. Upon closer investigation, it was a data exfiltration attack: the administrator makes sure that the link to the attacker's machine is shut down and any malware on the infected historian is removed." }
                }
              ]
     }
   , { name: "Nation State Disruption" // see note on the "None" counter in the doc on defences.
     , steps: [ { name: "Physical intrusion plant"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
-               , counters: { "CCTV plant" : "" }
+               , counters: { "CCTV plant" : "An intruder is detected entering the plant perimeter and trying to access the buildings. The moment the security guard comes and asks them what they are doing, they run away." }
                }
              , { name: "Remote control controller (0day)"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
                , counters: { "None" : "" }
                }
              , { name: "Remote control controller (0day)"
                , countered: false
-               , effect: ""
+               , effect: "No visible effect."
                , countered_by: ""
                , counters: { "None" : "" }
                }
              , { name: "Disruption controller"
                , countered: false
-               , effect: ""
+               , effect: "Optional description: one day, the turbines start accelerating out of control and finally blow up. Several employees are injured. The company, having lost one of its core assets, is forced to shut down."
                , countered_by: ""
                , counters: { "None" : "" }
                }
