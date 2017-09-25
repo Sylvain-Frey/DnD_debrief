@@ -508,6 +508,11 @@ function counter_attacks(attacks, defences) {
  */
 function update(defence, src, dest) {
 
+  if (src == dest || state[src] == null || state[dest] == null) {
+    // prevents "drop into itself" bug
+    return
+  }
+
   // move defence around
   state[src].defences = remove(defence, state[src].defences);
   state[dest].defences.push(defence);
