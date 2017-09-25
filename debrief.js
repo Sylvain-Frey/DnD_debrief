@@ -438,7 +438,8 @@ function compute_expenses(round_name) {
 
 /**
  * The following three functions handle click, drag and drop events.
- * Function drop(ev) triggers a game state update. */
+ * Function drop(ev) triggers a game state update.
+ */
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -688,4 +689,150 @@ function render(state) {
 
 };
 
+/**
+ * Upon loading the page, populate it with the initial setup based on the
+ * content of the attack model (cf. "attacks" constant).
+ * Consist of two main steps:
+ *   - generate the attack table elements
+ *   - generate the attack narrative elements
+ */
+function initial_rendering() {
+
+  /**
+   * Append an attack table element to the table based on an attack name.
+   * An example would be:
+   * <div class="attack" id="Scanning Kiddie">
+       <div class="attack_title">Scanning Kiddie</div>
+       <div class="attack_step as_1 uncountered">
+         <div class="attack_step_title"></div>
+         <ul class="attack_step_counters"></ul>
+       </div>
+       <div class="attack_step as_2 uncountered">
+         <div class="attack_step_title"></div>
+         <ul class="attack_step_counters"></ul>
+       </div>
+       <div class="attack_step as_3 uncountered">
+         <div class="attack_step_title"></div>
+         <ul class="attack_step_counters"></ul>
+       </div>
+       <div class="attack_step as_4 uncountered">
+         <div class="attack_step_title"></div>
+         <ul class="attack_step_counters"></ul>
+       </div>
+     </div>
+   */
+  function render_attack_table_element(attack_name) {
+
+    // main div
+    let div = document.createElement("div");
+    div.setAttribute("class", "attack");
+    div.setAttribute("id", attack_name);
+
+    // attack_title subdiv
+    let attack_title = document.createElement("div");
+    attack_title.setAttribute("class", "attack_title");
+    attack_title.innerHTML = attack_name;
+    div.appendChild(attack_title);
+
+    // attack steps, one for each round
+    for (i = 1; i <= 4; i++) {
+
+      // main div
+      step_div = document.createElement("div");
+      step_div.setAttribute("class", "attack_step as_" + i + "uncountered");
+
+      // step title child div
+      step_title_div = document.createElement("div");
+      step_title_div.setAttribute("class", "attack_step_title");
+      step_div.appendChild(step_title_div);
+
+      // step counters child ul
+      step_ul = document.createElement("ul");
+      step_ul.setAttribute("class", "attack_step_counters");
+      step_div.appendChild(step_ul);
+
+      div.appendChild(step_div);
+
+    }
+
+    document.getElementsByClassName("attacks_table")[0].appendChild(div);
+
+  };
+
+
+  /**
+   * Append an attack narrative element to the narratives based on an attack
+   * name.
+   * An example:
+   <h2>Round 1</h2>
+   <div class="narrative_round_1">
+     <div class="Scanning Kiddie">                          <- This is
+       <div class="narrative_title">Scanning Kiddie</div>   <- what we are
+       <div class="narrative_text"></div>                   <- rendering.
+     </div>
+     <div class="sep"/>
+     <div class="DoSing Kiddie">
+       <div class="narrative_title">DoSing Kiddie</div>
+       <div class="narrative_text"></div>
+     </div>
+     <div class="sep"/>
+     ...
+   </div>
+
+   <h2>Round 2</h2>
+   <div class="narrative_round_2">
+     <div class="Scanning Kiddie">                          <- This one
+       <div class="narrative_title">Scanning Kiddie</div>   <- as well,
+       <div class="narrative_text"></div>                   <- until round 4.
+     </div>
+     <div class="sep"/>
+     <div class="DoSing Kiddie">
+       <div class="narrative_title">DoSing Kiddie</div>
+       <div class="narrative_text"></div>
+     </div>
+     ...
+
+     Note: the actual content of the narrative (in narrative_text) are rendered
+     within the main render() function. Bad design...
+   */
+  function render_attack_narrative_elements(attack_name) {
+
+    for (i = 1; i <= 4; i++) {
+
+      // main div
+      let div = document.createElement("div");
+      div.setAttribute("class", attack_name);
+
+      // title subdiv
+      let title = document.createElement("div");
+      title.setAttribute("class", "narrative_title");
+      title.innerHTML = attack_name;
+      div.appendChild(title);
+
+      // text subdiv
+      let text = document.createElement("div");
+      text.setAttribute("class", "narrative_text");
+      div.appendChild(text);
+
+      document.getElementsByClassName("narrative_round_" + i)[0].appendChild(div);
+
+      // don't forget to add a separator!
+      let sep = document.createElement("div");
+      sep.setAttribute("class", "sep");
+      document.getElementsByClassName("narrative_round_" + i)[0].appendChild(sep);
+
+    }
+
+  }
+
+  for (a in attacks) {
+    attack = attacks[a];
+    render_attack_table_element(attack.name);
+    render_attack_narrative_elements(attack.name);
+  }
+
+
+};
+
+initial_rendering();
 render(state);
